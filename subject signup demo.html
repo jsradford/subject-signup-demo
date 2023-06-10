@@ -1,0 +1,25 @@
+<div id="contact-info" style="width: 70vw; margin: auto; background-color: lightgoldenrodyellow; padding: 20px; padding-bottom: 70px;">
+    <div id="contact-instructions">
+         <h3 style="font-weight:700">Welcome to the study!</h3>
+        <p class="lead">
+            Please provide your email address and we will include you in future lab communications. 
+        </p>
+        <h3 style="font-weight:700">Enter your contact information:</h3>
+    </div>
+    <div id="empanelment-box"></div>
+</div>
+
+<script>
+
+function initialize(){
+    //This function puts our signup form in whatever dom object you select (using jquery), here the div with the id=empanelment-box
+    createSubjectInput($("#empanelment-box"), function(status, info) {
+        if(status === true) {                   //if they put in their information
+            $("#contact-info").hide();          //hide the signup form
+            $("#survey").show();                //show the survey
+        }else {
+            alert(info); // "info" is standard information we create behind the scenes if the signup fails
+        }
+    });   
+}
+</script>
